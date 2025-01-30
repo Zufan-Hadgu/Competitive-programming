@@ -1,0 +1,14 @@
+# Problem: Water Bottles - https://leetcode.com/problems/water-bottles/description
+
+class Solution:
+    def numWaterBottles(self, numBottles: int, numExchange: int) -> int:
+        result = numBottles
+        while numExchange <= numBottles:
+            newD = numBottles//numExchange 
+            newReminder = numBottles % numExchange
+            result = result + newD
+            numBottles = newD + newReminder
+        return result
+    
+    
+        
